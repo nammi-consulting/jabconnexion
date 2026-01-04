@@ -7,18 +7,21 @@ export default function WeeklyCalendar({ classes }) {
   // Couleurs par catégorie
   const getCategoryColor = (category) => {
     const colors = {
-      'MMA Enfants': 'bg-yellow-500',
-      'MMA Adultes': 'bg-blue-500',
-      'BOXE THAI': 'bg-orange-500',
-      'MMA PRO': 'bg-red-500'
+      'Coaching privé': '#AFC4D6',
+      'MMA Enfants': '#FFF1B8',
+      'MMA Adultes': '#C9E4D6',
+      'BOXE THAI': '#FFD6A5',
+      'MMA PRO': '#E6A4A4',
+      'Grappling': '#D8CFF0',
+      'Lady boxing': '#F4C2D7'
     };
-    return colors[category] || 'bg-primary';
+    return colors[category] || '#F39200';
   };
 
-  // Générer les heures de la journée (6h - 22h)
+  // Générer les heures de la journée (7h - 21h)
   const hours = useMemo(() => {
     const result = [];
-    for (let i = 6; i <= 22; i++) {
+    for (let i = 7; i <= 21; i++) {
       result.push(`${i.toString().padStart(2, '0')}:00`);
     }
     return result;
@@ -28,7 +31,7 @@ export default function WeeklyCalendar({ classes }) {
   const timeToPosition = (time) => {
     const [hours, minutes] = time.split(':').map(Number);
     const totalMinutes = hours * 60 + minutes;
-    const startMinutes = 6 * 60; // 6h du matin
+    const startMinutes = 7 * 60; // 7h du matin
     const pixelsPerMinute = 30 / 60; // 30px par heure, donc 0.5px par minute
     return (totalMinutes - startMinutes) * pixelsPerMinute;
   };
@@ -106,32 +109,27 @@ export default function WeeklyCalendar({ classes }) {
               {classesByDay[dayIndex]?.map((cls) => {
                 const top = timeToPosition(cls.start_time);
                 const height = calculateHeight(cls.start_time, cls.end_time);
-                const colorClass = getCategoryColor(cls.category);
+                const bgColor = getCategoryColor(cls.category);
 
                 return (
                   <div
                     key={cls.id}
-                    className={`absolute left-1 right-1 ${colorClass} text-white rounded-md p-2 overflow-hidden shadow-md hover:shadow-lg transition-shadow cursor-pointer z-10`}
+                    className="absolute left-1 right-1 rounded-md p-2 overflow-hidden shadow-md hover:shadow-lg transition-shadow cursor-pointer z-10"
                     style={{
                       top: `${top}px`,
                       height: `${height}px`,
-                      minHeight: '25px'
+                      minHeight: '25px',
+                      backgroundColor: bgColor,
+                      color: '#1f2937'
                     }}
                   >
-                    <div className="text-xs font-bold truncate">{cls.title}</div>
-                    <div className="text-xs opacity-90 mt-1">
+                    <div className="text-xs font-bold truncate leading-tight">{cls.title}</div>
+                    <div className="text-xs opacity-90 mt-0.5 leading-tight">
                       {cls.start_time} - {cls.end_time}
                     </div>
                     {cls.instructor && (
-                      <div className="text-xs opacity-75 mt-1 truncate">
+                      <div className="text-xs opacity-75 mt-0.5 truncate leading-tight">
                         {cls.instructor}
-                      </div>
-                    )}
-                    {cls.category && (
-                      <div className="text-xs mt-1">
-                        <span className="bg-white bg-opacity-20 px-1 py-0.5 rounded">
-                          {cls.category}
-                        </span>
                       </div>
                     )}
                   </div>

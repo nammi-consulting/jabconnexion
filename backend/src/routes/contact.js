@@ -34,4 +34,21 @@ router.get('/', authenticateToken, async (req, res) => {
   }
 });
 
+// Supprimer un message (admin seulement)
+router.delete('/:id', authenticateToken, async (req, res) => {
+  const { id } = req.params;
+
+  try {
+    const [result] = await pool.query('DELETE FROM contact_messages WHERE id = ?', [id]);
+
+    if (result.affectedRows === 0) {
+      return res.status(404).json({ error: 'Message non trouvé' });
+    }
+
+    res.json({ message: 'Message supprimé avec succès' });
+  } catch (error) {
+    res.status(500).json({ error: 'Erreur lors de la suppression du message' });
+  }
+});
+
 export default router;

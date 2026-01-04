@@ -106,30 +106,34 @@ export default function Home() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-10">
             <div className="card p-0 overflow-hidden">
               <img
-                src="/Salle/salle 2.png"
+                src="/Salle/salle-2.webp"
                 alt="Notre salle - Vue 1"
                 className="w-full h-full object-cover aspect-square"
+                loading="lazy"
               />
             </div>
             <div className="card p-0 overflow-hidden">
               <img
-                src="/Salle/salle 3.png"
+                src="/Salle/salle-3.webp"
                 alt="Notre salle - Vue 2"
                 className="w-full h-full object-cover aspect-square"
+                loading="lazy"
               />
             </div>
             <div className="card p-0 overflow-hidden">
               <img
-                src="/Salle/salle 4.png"
+                src="/Salle/salle-4.webp"
                 alt="Notre salle - Vue 3"
                 className="w-full h-full object-cover aspect-square"
+                loading="lazy"
               />
             </div>
             <div className="card p-0 overflow-hidden">
               <img
-                src="/Salle/salle 5.png"
+                src="/Salle/salle-5.webp"
                 alt="Notre salle - Vue 4"
                 className="w-full h-full object-cover aspect-square"
+                loading="lazy"
               />
             </div>
           </div>
@@ -161,9 +165,10 @@ export default function Home() {
             {/* Cours 1 */}
             <div className="card text-center p-0 overflow-hidden">
               <img
-                src="/Cours/MMA.png"
+                src="/Cours/mma.webp"
                 alt="MMA"
                 className="w-full aspect-square object-cover"
+                loading="lazy"
               />
               <div className="p-3">
                 <div className="text-lg font-bold text-primary mb-1">MMA</div>
@@ -174,9 +179,10 @@ export default function Home() {
             {/* Cours 2 */}
             <div className="card text-center p-0 overflow-hidden">
               <img
-                src="/Cours/MUAY-THAI.png"
+                src="/Cours/muay-thai.webp"
                 alt="Muay-thaï"
                 className="w-full aspect-square object-cover"
+                loading="lazy"
               />
               <div className="p-3">
                 <div className="text-lg font-bold text-primary mb-1">MUAY-THAÏ</div>
@@ -187,9 +193,10 @@ export default function Home() {
             {/* Cours 3 */}
             <div className="card text-center p-0 overflow-hidden">
               <img
-                src="/Cours/GRAPPLING.png"
+                src="/Cours/grappling.webp"
                 alt="Grappling"
                 className="w-full aspect-square object-cover"
+                loading="lazy"
               />
               <div className="p-3">
                 <div className="text-lg font-bold text-primary mb-1">GRAPPLING</div>
@@ -200,9 +207,10 @@ export default function Home() {
             {/* Cours 4 */}
             <div className="card text-center p-0 overflow-hidden">
               <img
-                src="/Cours/LADY BOXING.png"
+                src="/Cours/lady-boxing.webp"
                 alt="Lady Boxing"
                 className="w-full aspect-square object-cover"
+                loading="lazy"
               />
               <div className="p-3">
                 <div className="text-lg font-bold text-primary mb-1">LADY BOXING</div>
@@ -213,9 +221,10 @@ export default function Home() {
             {/* Cours 5 */}
             <div className="card text-center p-0 overflow-hidden">
               <img
-                src="/Cours/STRETCHING.png"
+                src="/Cours/stretching.webp"
                 alt="Stretching"
                 className="w-full aspect-square object-cover"
+                loading="lazy"
               />
               <div className="p-3">
                 <div className="text-lg font-bold text-primary mb-1">STRETCHING</div>
@@ -226,9 +235,10 @@ export default function Home() {
             {/* Cours 6 */}
             <div className="card text-center p-0 overflow-hidden">
               <img
-                src="/Cours/KIDS.png"
+                src="/Cours/kids.webp"
                 alt="Kids"
                 className="w-full aspect-square object-cover"
+                loading="lazy"
               />
               <div className="p-3">
                 <div className="text-lg font-bold text-primary mb-1">KIDS</div>

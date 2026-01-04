@@ -7,6 +7,16 @@ export default function Calendar() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
+  const categories = [
+    { name: 'Coaching privé', color: '#AFC4D6' },
+    { name: 'MMA Enfants', color: '#FFF1B8' },
+    { name: 'MMA Adultes', color: '#C9E4D6' },
+    { name: 'BOXE THAI', color: '#FFD6A5' },
+    { name: 'MMA PRO', color: '#E6A4A4' },
+    { name: 'Grappling', color: '#D8CFF0' },
+    { name: 'Lady boxing', color: '#F4C2D7' }
+  ];
+
   useEffect(() => {
     fetchClasses();
   }, []);
@@ -43,13 +53,28 @@ export default function Calendar() {
   }
 
   return (
-    <div className="bg-gray-50 py-16">
+    <div className="bg-gray-50 pt-4 pb-16">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-12">
-          <h1 className="text-4xl font-bold text-gray-900 mb-4">Planning des Cours</h1>
-          <p className="text-xl text-gray-600">
-            Consultez les horaires de nos cours de MMA
+        <div className="text-center mb-4">
+          <p className="text-xl text-gray-600 mb-2">
+            Consultez les horaires de nos cours
           </p>
+        </div>
+
+        {/* Légende des catégories */}
+        <div className="mb-6 bg-white rounded-lg shadow-md p-4">
+          <div className="flex flex-wrap items-center justify-center gap-4">
+            <span className="text-sm font-semibold text-gray-700 mr-2">Nos cours :</span>
+            {categories.map((category) => (
+              <div key={category.name} className="flex items-center gap-2">
+                <div
+                  className="w-4 h-4 rounded"
+                  style={{ backgroundColor: category.color }}
+                ></div>
+                <span className="text-sm text-gray-700">{category.name}</span>
+              </div>
+            ))}
+          </div>
         </div>
 
         {classes.length === 0 ? (

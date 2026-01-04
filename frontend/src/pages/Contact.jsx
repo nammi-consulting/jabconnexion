@@ -171,7 +171,7 @@ export default function Contact() {
                     <div className="text-primary text-3xl mr-4">👤</div>
                     <div>
                       <h3 className="font-semibold mb-2 text-lg text-mist-950">Contact</h3>
-                      <p className="text-lg text-mist-950">Oumama MARRAKCHI</p>
+                      <p className="text-lg text-mist-950">Mr X</p>
                     </div>
                   </div>
                 </div>

@@ -2,7 +2,7 @@ export default function Gym() {
   return (
     <div>
       {/* Hero Section */}
-      <section className="section bg-cover bg-center bg-no-repeat relative" style={{backgroundImage: 'url(/Bandeaux/bandeau-gants.png)'}}>
+      <section className="section bg-cover bg-center bg-no-repeat relative" style={{backgroundImage: 'url(/Bandeaux/bandeau-gants.webp)'}} loading="lazy">
         {/* Overlay pour améliorer la lisibilité */}
         <div className="absolute inset-0 bg-black/40"></div>
 
@@ -32,9 +32,10 @@ export default function Gym() {
             </div>
             <div className="card p-0 overflow-hidden">
               <img
-                src="/Salle/salle 4.png"
+                src="/Salle/salle-4.webp"
                 alt="Espace Sol et Combat"
                 className="w-full h-full object-cover"
+                loading="lazy"
               />
             </div>
           </div>
@@ -47,9 +48,10 @@ export default function Gym() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div className="order-2 lg:order-1 card p-0 overflow-hidden">
               <img
-                src="/Salle/salle 5.png"
+                src="/Salle/salle-5.webp"
                 alt="Espace Ring"
                 className="w-full h-full object-cover"
+                loading="lazy"
               />
             </div>
             <div className="order-1 lg:order-2">
@@ -78,9 +80,10 @@ export default function Gym() {
             </div>
             <div className="card p-0 overflow-hidden">
               <img
-                src="/Salle/salle 3.png"
+                src="/Salle/salle-3.webp"
                 alt="Espace Fitness"
                 className="w-full h-full object-cover"
+                loading="lazy"
               />
             </div>
           </div>
@@ -93,9 +96,10 @@ export default function Gym() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div className="order-2 lg:order-1 card p-0 overflow-hidden">
               <img
-                src="/Salle/salle 6.png"
+                src="/Salle/salle-6.webp"
                 alt="Espace Vestiaire"
                 className="w-full h-full object-cover"
+                loading="lazy"
               />
             </div>
             <div className="order-1 lg:order-2">
@@ -125,23 +129,26 @@ export default function Gym() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div className="card p-0 overflow-hidden">
               <img
-                src="/Salle/salle 7.png"
+                src="/Salle/salle-7.webp"
                 alt="Espace Accueil - Vue 1"
                 className="w-full h-full object-cover aspect-square"
+                loading="lazy"
               />
             </div>
             <div className="card p-0 overflow-hidden">
               <img
-                src="/Salle/salle 1.png"
+                src="/Salle/salle-1.webp"
                 alt="Espace Accueil - Vue 2"
                 className="w-full h-full object-cover aspect-square"
+                loading="lazy"
               />
             </div>
             <div className="card p-0 overflow-hidden">
               <img
-                src="/Salle/salle 2.png"
+                src="/Salle/salle-2.webp"
                 alt="Espace Accueil - Vue 3"
                 className="w-full h-full object-cover aspect-square"
+                loading="lazy"
               />
             </div>
           </div>

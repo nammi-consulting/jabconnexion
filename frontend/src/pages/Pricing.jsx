@@ -2,7 +2,7 @@ export default function Pricing() {
   return (
     <div>
       {/* Hero Section - Style Oatmeal, Contenu JAB */}
-      <section className="section bg-cover bg-center bg-no-repeat relative" style={{backgroundImage: 'url(/Bandeaux/bandeau-jab-logo2.png)'}}>
+      <section className="section bg-cover bg-center bg-no-repeat relative" style={{backgroundImage: 'url(/Bandeaux/bandeau-jab-logo2.webp)'}} loading="lazy">
         {/* Overlay pour améliorer la lisibilité */}
         <div className="absolute inset-0 bg-black/40"></div>
 
@@ -44,7 +44,7 @@ export default function Pricing() {
               <a
                 href="/contact"
                 className="block w-full text-center text-white hover:opacity-90 py-3 px-6 rounded-xl font-semibold transition-all duration-200"
-                style={{backgroundColor: 'rgb(31 41 55 / var(--tw-bg-opacity, 1))'}}
+                style={{backgroundColor: '#6b7280'}}
               >
                 Choisir cette formule
               </a>
@@ -99,7 +99,7 @@ export default function Pricing() {
               <a
                 href="/contact"
                 className="block w-full text-center text-white hover:opacity-90 py-3 px-6 rounded-xl font-semibold transition-all duration-200"
-                style={{backgroundColor: 'rgb(31 41 55 / var(--tw-bg-opacity, 1))'}}
+                style={{backgroundColor: '#6b7280'}}
               >
                 Choisir cette formule
               </a>

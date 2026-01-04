@@ -10,7 +10,7 @@ export default function Layout() {
             {/* Logo JAB CONNEXION */}
             <Link to="/" className="flex items-center space-x-3 group">
               <img
-                src="/LOGO_JAB_BLACK.png"
+                src="/logo-jab-black.webp"
                 alt="Jab Connexion Logo"
                 className="h-12 w-12"
               />
@@ -58,6 +58,12 @@ export default function Layout() {
                 Boutique
               </Link>
               <Link
+                to="/contact"
+                className="text-sm font-medium text-mist-700 hover:text-mist-950 transition-colors"
+              >
+                Contact
+              </Link>
+              <Link
                 to="/admin"
                 className="text-sm font-medium text-mist-700 hover:text-mist-950 transition-colors"
               >
@@ -67,12 +73,6 @@ export default function Layout() {
 
             {/* CTA Buttons */}
             <div className="flex items-center space-x-4">
-              <Link
-                to="/contact"
-                className="text-sm font-medium text-mist-700 hover:text-mist-950 transition-colors"
-              >
-                Contact
-              </Link>
               <Link to="/contact" className="btn-primary-orange text-sm">
                 Essai Gratuit
               </Link>
@@ -94,7 +94,7 @@ export default function Layout() {
             <div className="md:col-span-1">
               <Link to="/" className="inline-flex items-center space-x-2 mb-4">
                 <img
-                  src="/LOGO_JAB_BLACK.png"
+                  src="/logo-jab-black.webp"
                   alt="Jab Connexion Logo"
                   className="h-10 w-10"
                 />

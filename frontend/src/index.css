@@ -92,8 +92,8 @@
   /* Section spacing */
   .section {
     @apply px-4 sm:px-6 lg:px-8;
-    padding-top: 4rem;
-    padding-bottom: 4rem;
+    padding-top: 3rem;
+    padding-bottom: 3rem;
   }
 
   .section-sm {
@@ -171,8 +171,9 @@
   }
 
   .pricing-card-popular {
-    @apply bg-secondary text-white rounded-2xl p-8
+    @apply text-white rounded-2xl p-8
            shadow-lg
            transition-all duration-200;
+    background-color: #6b7280;
   }
 }
