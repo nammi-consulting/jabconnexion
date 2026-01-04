@@ -2,6 +2,7 @@ import { useState } from 'react';
 
 export default function Home() {
   const [openFaq, setOpenFaq] = useState(null);
+  const [showDisclaimer, setShowDisclaimer] = useState(true);
 
   const toggleFaq = (index) => {
     setOpenFaq(openFaq === index ? null : index);
@@ -9,6 +10,24 @@ export default function Home() {
 
   return (
     <div>
+      {/* Disclaimer Banner */}
+      {showDisclaimer && (
+        <div className="bg-red-100 border-b border-red-200 py-3 px-4">
+          <div className="max-w-7xl mx-auto flex items-center justify-between">
+            <p className="text-red-800 text-sm md:text-base flex-1 text-center">
+              ⚠️ Site fictif - La salle de sport JAB CONNEXION n'existe pas "encore"
+            </p>
+            <button
+              onClick={() => setShowDisclaimer(false)}
+              className="text-red-800 hover:text-red-900 ml-4 text-xl font-bold flex-shrink-0"
+              aria-label="Fermer le message"
+            >
+              ×
+            </button>
+          </div>
+        </div>
+      )}
+
       {/* Hero Section - Contenu JAB, Style Oatmeal */}
       <section className="section bg-cover bg-center bg-no-repeat relative" style={{backgroundImage: 'url(/homepage-jab1.png)'}}>
         {/* Overlay pour améliorer la lisibilité */}

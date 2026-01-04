@@ -1,4 +1,5 @@
 import { Link, Outlet } from 'react-router-dom';
+import { VERSION } from '../version';
 
 export default function Layout() {
   return (
@@ -191,7 +192,7 @@ export default function Layout() {
           <div className="pt-8 border-t border-mist-200">
             <div className="flex flex-col md:flex-row justify-between items-center gap-4">
               <p className="text-sm text-mist-500">
-                © 2026 Jab Connexion. Tous droits réservés.
+                © 2026 Jab Connexion. Tous droits réservés. - v{VERSION}
               </p>
               <div className="flex items-center gap-4">
                 <span className="px-3 py-1 text-xs font-medium bg-mist-100 text-mist-700 rounded-full border border-mist-200">
