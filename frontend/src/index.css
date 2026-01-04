@@ -1,0 +1,178 @@
+@import url('https://fonts.googleapis.com/css2?family=Familjen+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background-color: oklch(96.3% .002 197.1);
+  }
+
+  body {
+    margin: 0;
+    font-family: 'Inter', system-ui, sans-serif;
+    color: theme('colors.mist.950');
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Familjen Grotesk', sans-serif;
+    font-weight: 600;
+    letter-spacing: -0.025em;
+  }
+
+  h1 {
+    font-size: 3rem;
+    line-height: 1.1;
+  }
+
+  h2 {
+    font-size: 2.25rem;
+    line-height: 1.2;
+  }
+}
+
+@layer components {
+  /* Buttons style Oatmeal */
+  .btn-primary {
+    @apply inline-flex items-center justify-center px-6 py-3 text-base font-medium
+           bg-secondary text-white rounded-xl
+           transition-all duration-200
+           focus:outline-none focus:ring-2 focus:ring-offset-2;
+  }
+
+  .btn-primary:hover {
+    background-color: #292524;
+  }
+
+  .btn-secondary {
+    @apply inline-flex items-center justify-center px-6 py-3 text-base font-medium
+           rounded-xl border
+           transition-all duration-200
+           focus:outline-none focus:ring-2 focus:ring-offset-2;
+    background-color: #f5f5f4;
+    color: #1c1917;
+    border-color: #e7e5e4;
+  }
+
+  .btn-secondary:hover {
+    background-color: #e7e5e4;
+  }
+
+  .btn-primary-orange {
+    @apply inline-flex items-center justify-center px-6 py-3 text-base font-medium
+           bg-primary text-white rounded-xl
+           transition-all duration-200
+           focus:outline-none focus:ring-2 focus:ring-offset-2;
+  }
+
+  .btn-primary-orange:hover {
+    background-color: #c74100;
+  }
+
+  /* Cards style Oatmeal */
+  .card {
+    @apply bg-white rounded-2xl border p-8
+           transition-all duration-200;
+    border-color: #e7e5e4;
+  }
+
+  .card:hover {
+    border-color: #d6d3d1;
+  }
+
+  .card-highlighted {
+    @apply bg-white rounded-2xl border-2 border-secondary p-8
+           shadow-sm
+           transition-all duration-200;
+  }
+
+  /* Section spacing */
+  .section {
+    @apply px-4 sm:px-6 lg:px-8;
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+  }
+
+  .section-sm {
+    @apply py-16 px-4 sm:px-6 lg:px-8;
+  }
+
+  /* Container */
+  .container-custom {
+    @apply max-w-7xl mx-auto;
+  }
+
+  /* Badge style Oatmeal */
+  .badge {
+    @apply inline-flex items-center px-3 py-1 text-xs font-medium
+           rounded-full border;
+    background-color: #f5f5f4;
+    color: #44403c;
+    border-color: #e7e5e4;
+  }
+
+  .badge-orange {
+    @apply inline-flex items-center px-3 py-1 text-xs font-medium
+           text-primary rounded-full border;
+    background-color: #fff7ed;
+    border-color: #fed7aa;
+  }
+
+   .badge-red {
+    @apply inline-flex items-center px-3 py-1 text-xs font-medium
+           text-primary rounded-full border;
+    background-color: #ed7878;
+    border-color: #ed7878;
+    color: #fff7ed;
+  }
+
+  /* FAQ Accordion */
+  .faq-item {
+    @apply border-b py-6
+           transition-colors duration-200;
+    border-color: #e7e5e4;
+  }
+
+  .faq-item:hover {
+    border-color: #d6d3d1;
+  }
+
+  /* Input fields */
+  .input {
+    @apply w-full px-4 py-3 text-base
+           bg-white border rounded-xl
+           transition-all duration-200
+           focus:outline-none focus:ring-2 focus:border-transparent;
+    border-color: #d6d3d1;
+  }
+
+  .input:focus {
+    --tw-ring-color: #a8a29e;
+  }
+
+  .input::placeholder {
+    color: #a8a29e;
+  }
+
+  /* Pricing cards */
+  .pricing-card {
+    @apply rounded-2xl border p-8
+           transition-all duration-200;
+    background-color: #fafaf9;
+    border-color: #e7e5e4;
+  }
+
+  .pricing-card:hover {
+    border-color: #d6d3d1;
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
+  }
+
+  .pricing-card-popular {
+    @apply bg-secondary text-white rounded-2xl p-8
+           shadow-lg
+           transition-all duration-200;
+  }
+}
