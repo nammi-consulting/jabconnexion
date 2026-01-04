@@ -53,8 +53,7 @@ async function importSchema() {
 
     console.log('\n👤 Utilisateur admin créé:');
     console.log('   Username: admin');
-    console.log('   Password: admin123');
-    console.log('   ⚠️  CHANGEZ CE MOT DE PASSE APRÈS VOTRE PREMIER LOGIN!\n');
+    console.log('   ⚠️  Changez le mot de passe avec le script change-admin-password.js\n');
 
   } catch (error) {
     console.error('❌ Erreur:', error.message);

@@ -45,17 +45,6 @@ export const login = async (req, res) => {
   }
 };
 
-export const createInitialAdmin = async () => {
-  try {
-    const [users] = await pool.query('SELECT * FROM users WHERE username = ?', ['admin']);
-    const existingUser = users[0];
-
-    if (!existingUser) {
-      const hashedPassword = await bcrypt.hash('admin123', 10);
-      await pool.query('INSERT INTO users (username, password) VALUES (?, ?)', ['admin', hashedPassword]);
-      console.log('✓ Utilisateur admin créé (username: admin, password: admin123)');
-    }
-  } catch (error) {
-    console.error('Erreur lors de la création de l\'admin:', error);
-  }
-};
+// Fonction createInitialAdmin supprimée pour des raisons de sécurité
+// L'utilisateur admin doit être créé manuellement via le script d'import du schéma
+// et le mot de passe doit être changé avec change-admin-password.js

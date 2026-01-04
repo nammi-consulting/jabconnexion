@@ -123,8 +123,8 @@ CREATE TABLE IF NOT EXISTS contact_messages (
   created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 
--- Créer un utilisateur admin par défaut (mot de passe : admin123)
--- Hash bcrypt de "admin123"
+-- Créer un utilisateur admin par défaut
+-- IMPORTANT: Changez le mot de passe immédiatement après avec change-admin-password.js
 INSERT INTO users (username, password) VALUES
 ('admin', '$2b$10$rKvvqYhJ5Y5Y5Y5Y5Y5Y5eBqYJ5Y5Y5Y5Y5Y5Y5Y5Y5Y5Y5Y5Y5Y5');
 ```
@@ -235,7 +235,7 @@ curl https://jabconnexion-backend.up.railway.app/api/classes
 
 ### Testez la connexion admin :
 1. Allez sur `/admin`
-2. Connectez-vous avec : `admin` / `admin123`
+2. Connectez-vous avec vos identifiants admin
 3. Ajoutez un cours de test
 
 ---

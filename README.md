@@ -56,11 +56,11 @@ Le site web est accessible sur http://localhost:5173
 
 ## Identifiants Admin
 
-Par défaut, un compte administrateur est créé automatiquement :
+L'accès administrateur nécessite :
 - **Nom d'utilisateur** : `admin`
-- **Mot de passe** : `admin123`
+- **Mot de passe** : Configuré lors du déploiement
 
-⚠️ **Important** : Changez ces identifiants en production !
+⚠️ **Important** : Utilisez un mot de passe fort et unique pour l'administration !
 
 ## API Endpoints
 

@@ -34,7 +34,7 @@ CREATE TABLE IF NOT EXISTS contact_messages (
 );
 
 -- Insérer un utilisateur admin par défaut
--- Mot de passe : admin123 (CHANGEZ-LE APRÈS LE PREMIER LOGIN !)
+-- IMPORTANT: Changez le mot de passe immédiatement après l'import avec change-admin-password.js
 INSERT INTO users (username, password) VALUES
 ('admin', '$2a$10$bZm6WkjmqKiI7t9QdUoQQO6659tbMC7yyLKTYKHU.ueKABzG9eU7S')
 ON DUPLICATE KEY UPDATE username = username;
