@@ -7,7 +7,7 @@ export default {
   theme: {
     extend: {
       colors: {
-        primary: '#F39200', // Orange JAB CONNEXION
+        primary: '#DC2626', // Rouge JAB CONNEXION
         secondary: '#000000', // Noir pour style Oatmeal
         mist: {
           50: '#fafaf9',
