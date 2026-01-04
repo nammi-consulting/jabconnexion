@@ -1,6 +1,6 @@
 import jwt from 'jsonwebtoken';
 import bcrypt from 'bcryptjs';
-import db from './database.js';
+import pool from './database.js';
 
 export const authenticateToken = (req, res, next) => {
   const authHeader = req.headers['authorization'];
@@ -23,7 +23,8 @@ export const login = async (req, res) => {
   const { username, password } = req.body;
 
   try {
-    const user = db.prepare('SELECT * FROM users WHERE username = ?').get(username);
+    const [users] = await pool.query('SELECT * FROM users WHERE username = ?', [username]);
+    const user = users[0];
 
     if (!user) {
       return res.status(401).json({ error: 'Identifiants incorrects' });
@@ -46,11 +47,12 @@ export const login = async (req, res) => {
 
 export const createInitialAdmin = async () => {
   try {
-    const existingUser = db.prepare('SELECT * FROM users WHERE username = ?').get('admin');
+    const [users] = await pool.query('SELECT * FROM users WHERE username = ?', ['admin']);
+    const existingUser = users[0];
 
     if (!existingUser) {
       const hashedPassword = await bcrypt.hash('admin123', 10);
-      db.prepare('INSERT INTO users (username, password) VALUES (?, ?)').run('admin', hashedPassword);
+      await pool.query('INSERT INTO users (username, password) VALUES (?, ?)', ['admin', hashedPassword]);
       console.log('✓ Utilisateur admin créé (username: admin, password: admin123)');
     }
   } catch (error) {

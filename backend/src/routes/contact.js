@@ -1,11 +1,11 @@
 import express from 'express';
-import db from '../database.js';
+import pool from '../database.js';
 import { authenticateToken } from '../auth.js';
 
 const router = express.Router();
 
 // Envoyer un message de contact (public)
-router.post('/', (req, res) => {
+router.post('/', async (req, res) => {
   const { name, email, phone, message } = req.body;
 
   if (!name || !email || !message) {
@@ -13,9 +13,10 @@ router.post('/', (req, res) => {
   }
 
   try {
-    db.prepare(
-      'INSERT INTO contact_messages (name, email, phone, message) VALUES (?, ?, ?, ?)'
-    ).run(name, email, phone || null, message);
+    await pool.query(
+      'INSERT INTO contact_messages (name, email, phone, message) VALUES (?, ?, ?, ?)',
+      [name, email, phone || null, message]
+    );
 
     res.status(201).json({ message: 'Message envoyé avec succès' });
   } catch (error) {
@@ -24,9 +25,9 @@ router.post('/', (req, res) => {
 });
 
 // Récupérer tous les messages (admin seulement)
-router.get('/', authenticateToken, (req, res) => {
+router.get('/', authenticateToken, async (req, res) => {
   try {
-    const messages = db.prepare('SELECT * FROM contact_messages ORDER BY created_at DESC').all();
+    const [messages] = await pool.query('SELECT * FROM contact_messages ORDER BY created_at DESC');
     res.json(messages);
   } catch (error) {
     res.status(500).json({ error: 'Erreur lors de la récupération des messages' });
