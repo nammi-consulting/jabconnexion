@@ -1,0 +1,30 @@
+services:
+  # Backend API
+  - type: web
+    name: jabconnexion-backend
+    runtime: node
+    region: frankfurt  # Ou oregon/singapore selon votre localisation
+    plan: free
+    rootDir: backend
+    buildCommand: pnpm install
+    startCommand: node src/index.js
+    healthCheckPath: /api/health
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: 10000
+      - key: JWT_SECRET
+        sync: false  # À configurer manuellement dans le dashboard Render
+      - key: DB_HOST
+        sync: false
+      - key: DB_PORT
+        sync: false
+      - key: DB_USER
+        sync: false
+      - key: DB_PASSWORD
+        sync: false
+      - key: DB_NAME
+        sync: false
+      - key: CORS_ORIGIN
+        sync: false
